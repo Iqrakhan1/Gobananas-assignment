@@ -1,14 +1,20 @@
-﻿# Gobananas Assignment
+
+ # Gobananas Assignment
+
 
 ## Overview
 
 This project is a front-end assignment for the Gobananas company. It is a React application that showcases various features and components, including a navbar, hero section, item list, contact page, and more. The project uses Material-UI for styling and React Router DOM for navigation.
 
+## Check live project at :
+
+(https://gobananas-assignment-blue.vercel.app/)
+
 ## Screenshots
 
 ## Home page
 
-for home page use Fakestore api (https://fakestoreapi.com/products) to show product datails image , title , proce , description etc.
+ the home page uses Fakestore API (https://fakestoreapi.com/products) to show product data image, title, product, description, etc.
 
 ## 1
 
@@ -48,4 +54,4 @@ To run this project locally, follow these steps:
 
 ## Conclusion
 
-This project is a demonstration of frontend development skills using React. It incorporates various components and pages to create a dynamic user interface. By leveraging Material-UI for styling and React Router for navigation, it showcases a modern and responsive web application structure. With features like a navbar, hero section, item list, and contact page, it provides a seamless browsing experience. Whether you're exploring products or contacting support, this application offers a smooth interaction flow. Feel free to clone the repository and explore the codebase further.
+This project is a demonstration of front-end development skills using React. It incorporates various components and pages to create a dynamic user interface. By leveraging Material-UI for styling and React Router for navigation, it showcases a modern and responsive web application structure. With features like a navbar, hero section, item list, and contact page, it provides a seamless browsing experience. Whether you're exploring products or contacting support, this application offers a smooth interaction flow. Feel free to clone the repository and explore the codebase further.
