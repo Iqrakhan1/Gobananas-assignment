@@ -11,6 +11,7 @@ import {
 } from "@mui/material";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import EmailIcon from "@mui/icons-material/Email";
+import shopingBag from "../assets/images/shoping-bag.png";
 
 const Contact = () => {
   // Function to handle form submission
@@ -35,7 +36,7 @@ const Contact = () => {
               <Grid item xs={12} md={6} container justifyContent="center">
                 {/* Image element */}
                 <img
-                  src="https://cdn-icons-png.freepik.com/512/4362/4362388.png"
+                  src={shopingBag}
                   alt="Contact Form"
                   style={{ width: "60%", borderRadius: 4 }}
                 />

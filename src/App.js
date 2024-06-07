@@ -26,7 +26,7 @@ function App() {
         <Route path="/shop" element={<Shop />} />
 
         {/* Route for the Contact page */}
-        <Route path="/contact" element={<ContactPage />} />
+        <Route path="/contact-us" element={<ContactPage />} />
 
         {/* Add more routes as needed */}
       </Routes>

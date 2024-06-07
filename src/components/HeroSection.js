@@ -1,6 +1,7 @@
 import React from "react";
 import { Box, Typography, Button } from "@mui/material";
 import { Link } from "react-router-dom";
+import heroImg from "../assets/images/hero-section-img.avif";
 
 const HeroSection = () => {
   return (
@@ -10,8 +11,7 @@ const HeroSection = () => {
         backgroundColor: "#f0f0f0",
         padding: "80px 0",
         position: "relative", // Add position relative to container
-        backgroundImage:
-          "url(https://img.freepik.com/premium-photo/purple-shopping-bags-purple-background_960080-606.jpg?w=996)",
+        backgroundImage: `url(${heroImg})`,
         backgroundSize: "cover",
         backgroundPosition: "center",
       }}>
