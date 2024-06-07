@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import Table from "@mui/joy/Table"; // Import Table component from Material-UI Joy package
-import { Container, Box } from "@mui/material"; // Import Container and Box components from Material-UI
+import { Container, Box, Typography } from "@mui/material"; // Import Container and Box components from Material-UI
 
 export default function TableData() {
   // State to store the fetched data
@@ -21,11 +21,31 @@ export default function TableData() {
       });
   }, []);
 
+  {
+    /*  data fatch from https://jsonplaceholder.typicode.com/users */
+  }
   return (
     // Container to center the content and provide some margin at the top
     <Container sx={{ margin: "70px auto" }}>
       {/* Box to allow horizontal scrolling if needed */}
       <Box sx={{ overflowX: "auto" }}>
+        <Typography
+          variant="h2"
+          component="h2"
+          gutterBottom
+          sx={{
+            fontSize: {
+              xs: "1rem",
+              sm: "2rem",
+              md: "3rem",
+              lg: "4rem",
+              xl: "5rem",
+            },
+            fontWeight: "bold",
+            color: "#6a1b9a",
+          }}>
+          Table Data
+        </Typography>
         {/* Table component to display the user data */}
         <Table sx={{ minWidth: 650 }} borderAxis="both">
           {/* Table header */}

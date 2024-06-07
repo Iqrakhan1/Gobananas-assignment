@@ -39,7 +39,22 @@ export default function ListData() {
           {/* Paper component to give the list a nice background and padding */}
           <Paper sx={{ padding: 2 }}>
             {/* Typography for the heading */}
-            <Typography variant="h4" component="h2" gutterBottom>
+
+            <Typography
+              variant="h2"
+              component="h2"
+              gutterBottom
+              sx={{
+                fontSize: {
+                  xs: "1rem",
+                  sm: "2rem",
+                  md: "3rem",
+                  lg: "4rem",
+                  xl: "5rem",
+                },
+                fontWeight: "bold",
+                color: "#6a1b9a",
+              }}>
               Users List
             </Typography>
             {/* List component to display the users */}

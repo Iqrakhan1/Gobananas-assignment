@@ -7,7 +7,7 @@ const ContactPage = () => {
     // Container component to center content
     <Container>
       {/* Box component with margin */}
-      <Box my={12}>
+      <Box my={10}>
         {/* Heading */}
         <Typography
           variant="h2"
