@@ -3,9 +3,10 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
 import Home from "./pages/Home"; // Import Home without destructuring
-import TableData from "./pages/TableData"; // Import TableData page
-import ListData from "./pages/ListData"; // Import ListData page
+
 import ContactPage from "./pages/ContactPage"; // Import ContactPage
+import Shop from "./pages/Shop";
+import Products from "./pages/Products";
 
 function App() {
   return (
@@ -19,10 +20,10 @@ function App() {
         <Route path="*" element={<Home />} />
 
         {/* Route for the TableData page */}
-        <Route path="/table-data" element={<TableData />} />
+        <Route path="/products" element={<Products />} />
 
         {/* Route for the ListData page */}
-        <Route path="/list-data" element={<ListData />} />
+        <Route path="/shop" element={<Shop />} />
 
         {/* Route for the Contact page */}
         <Route path="/contact" element={<ContactPage />} />

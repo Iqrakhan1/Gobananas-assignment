@@ -12,7 +12,7 @@ import {
   Paper,
 } from "@mui/material";
 
-export default function ListData() {
+export default function Shop() {
   // State to store the fetched data
   const [data, setData] = useState([]);
 
@@ -39,7 +39,6 @@ export default function ListData() {
           {/* Paper component to give the list a nice background and padding */}
           <Paper sx={{ padding: 2 }}>
             {/* Typography for the heading */}
-
             <Typography
               variant="h2"
               component="h2"
@@ -55,7 +54,7 @@ export default function ListData() {
                 fontWeight: "bold",
                 color: "#6a1b9a",
               }}>
-              Users List
+              Shop
             </Typography>
             {/* List component to display the users */}
             <List>
@@ -77,8 +76,17 @@ export default function ListData() {
                       sx={{ bgcolor: "#6a1b9a" }}
                     />
                   </ListItemAvatar>
-                  {/* List item text for the user's name and email */}
-                  <ListItemText primary={user.name} secondary={user.email} />
+                  {/* List item text for the user's name, email, and address */}
+                  <ListItemText
+                    primary={user.name}
+                    secondary={
+                      user.email +
+                      " , " +
+                      user.website +
+                      " - " +
+                      user.address.city
+                    }
+                  />
                 </ListItem>
               ))}
             </List>

@@ -3,7 +3,7 @@ import axios from "axios";
 import Table from "@mui/joy/Table"; // Import Table component from Material-UI Joy package
 import { Container, Box, Typography } from "@mui/material"; // Import Container and Box components from Material-UI
 
-export default function TableData() {
+export default function Products() {
   // State to store the fetched data
   const [data, setData] = useState([]);
 
@@ -21,13 +21,9 @@ export default function TableData() {
       });
   }, []);
 
-  {
-    /*  data fatch from https://jsonplaceholder.typicode.com/users */
-  }
   return (
-    // Container to center the content and provide some margin at the top
+    //   data fatch from https://jsonplaceholder.typicode.com/users
     <Container sx={{ margin: "70px auto" }}>
-      {/* Box to allow horizontal scrolling if needed */}
       <Box sx={{ overflowX: "auto" }}>
         <Typography
           variant="h2"
@@ -44,7 +40,7 @@ export default function TableData() {
             fontWeight: "bold",
             color: "#6a1b9a",
           }}>
-          Table Data
+          Products
         </Typography>
         {/* Table component to display the user data */}
         <Table sx={{ minWidth: 650 }} borderAxis="both">
