@@ -11,7 +11,7 @@ import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
 import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
-import AdbIcon from "@mui/icons-material/Adb";
+import ShoppingBagIcon from "@mui/icons-material/ShoppingBag";
 import { Link, useLocation } from "react-router-dom";
 
 const pages = ["Home", "Shop", "Products", "Contact Us"];
@@ -62,7 +62,9 @@ function Navbar() {
           }}>
           {/* Logo and brand name */}
           <Box sx={{ display: "flex", alignItems: "center" }}>
-            <AdbIcon sx={{ display: { xs: "none", md: "flex" }, mr: 1 }} />
+            <ShoppingBagIcon
+              sx={{ display: { xs: "none", md: "flex" }, mr: 1 }}
+            />
             <Typography
               variant="h6"
               noWrap

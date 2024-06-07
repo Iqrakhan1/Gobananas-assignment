@@ -55,6 +55,24 @@ const ItemList = () => {
   return (
     <Container sx={{ marginBottom: "50px", marginTop: "30px" }}>
       <Box sx={{ textAlign: "left", marginBottom: "20px" }}>
+        <Typography
+          variant="h2"
+          component="h2"
+          gutterBottom
+          sx={{
+            fontSize: {
+              xs: "2rem",
+              sm: "2rem",
+              md: "3rem",
+              lg: "4rem",
+              xl: "5rem",
+            },
+            fontWeight: "bold",
+            color: "#6a1b9a",
+            textAlign: "center",
+          }}>
+          Products
+        </Typography>
         <TextField
           label="Search items..."
           variant="outlined"
@@ -70,6 +88,8 @@ const ItemList = () => {
             ),
           }}
           sx={{
+            marginBottom: "2rem",
+            marginTop: "2rem",
             "& .MuiOutlinedInput-root": {
               borderRadius: "50px", // Round edges of the input field
               "& fieldset": {
