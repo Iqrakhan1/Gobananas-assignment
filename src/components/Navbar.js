@@ -77,7 +77,7 @@ function Navbar() {
                 color: "#6a1b9a",
                 textDecoration: "none",
               }}>
-              E-COM
+              MART
             </Typography>
           </Box>
 

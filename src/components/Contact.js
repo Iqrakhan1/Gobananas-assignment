@@ -24,7 +24,7 @@ const Contact = () => {
     // Container component to center content
     <Container>
       {/* Box component with margin */}
-      <Box my={12}>
+      <Box mb={12}>
         {/* Grid container with spacing and align items */}
         <Grid spacing={4} alignItems="center">
           {/* Contact Form with Image */}
@@ -49,7 +49,7 @@ const Contact = () => {
                   gutterBottom
                   align="center"
                   sx={{ color: "#6a1b9a", marginBottom: 2 }}>
-                  Welcome to Our Contact Page!
+                  Contact Now
                 </Typography>
                 {/* Typography for description */}
                 <Typography

@@ -1,69 +1,106 @@
 import React, { useEffect, useState } from "react";
-import axios from "axios";
-import Table from "@mui/joy/Table"; // Import Table component from Material-UI Joy package
-import { Container, Box, Typography } from "@mui/material"; // Import Container and Box components from Material-UI
+import { fetchItems } from "../api";
+import {
+  Container,
+  Table,
+  TableBody,
+  TableCell,
+  TableContainer,
+  TableHead,
+  TableRow,
+  Paper,
+  TextField,
+  InputAdornment,
+  Box,
+  Typography,
+} from "@mui/material";
+import SearchIcon from "@mui/icons-material/Search";
 
-export default function Products() {
-  // State to store the fetched data
-  const [data, setData] = useState([]);
+const Products = () => {
+  const [items, setItems] = useState([]);
+  const [searchTerm, setSearchTerm] = useState("");
+  const [filteredItems, setFilteredItems] = useState([]);
 
-  // useEffect to fetch data when the component mounts
   useEffect(() => {
-    axios
-      .get("https://jsonplaceholder.typicode.com/users") // API call to fetch user data
-      .then((response) => {
-        // Set the fetched data to the state
-        setData(response.data);
-      })
-      .catch((error) => {
-        // Handle errors if any
-        console.error("Error fetching data:", error);
-      });
+    const fetchData = async () => {
+      try {
+        const data = await fetchItems();
+        setItems(data);
+      } catch (error) {
+        console.error("Error fetching items:", error);
+      }
+    };
+
+    fetchData();
   }, []);
 
+  useEffect(() => {
+    setFilteredItems(
+      items.filter((item) =>
+        item.title.toLowerCase().includes(searchTerm.toLowerCase())
+      )
+    );
+  }, [items, searchTerm]);
+
   return (
-    //   data fatch from https://jsonplaceholder.typicode.com/users
-    <Container sx={{ margin: "70px auto" }}>
-      <Box sx={{ overflowX: "auto" }}>
-        <Typography
-          variant="h2"
-          component="h2"
-          gutterBottom
-          sx={{
-            fontSize: {
-              xs: "1rem",
-              sm: "2rem",
-              md: "3rem",
-              lg: "4rem",
-              xl: "5rem",
-            },
-            fontWeight: "bold",
-            color: "#6a1b9a",
-          }}>
-          Products
-        </Typography>
-        {/* Table component to display the user data */}
-        <Table sx={{ minWidth: 650 }} borderAxis="both">
-          {/* Table header */}
-          <thead>
-            <tr>
-              <th>ID</th>
-              <th>Name</th>
-              <th>Username</th>
-            </tr>
-          </thead>
-          {/* Table body */}
-          <tbody>
-            {data.map((user) => (
-              <tr key={user.id}>
-                <td>{user.id}</td>
-                <td>{user.name}</td>
-                <td>{user.username}</td>
-              </tr>
-            ))}
-          </tbody>
-        </Table>
-      </Box>
-    </Container>
+    <>
+      <Container sx={{ margin: "70px auto" }} my={12}>
+        {/* Box to allow horizontal scrolling if needed */}
+        <Box sx={{ overflowX: "auto" }}>
+          {/* Paper component to give the list a nice background and padding */}
+          <Paper sx={{ padding: 2 }}>
+            {/* Typography for the heading */}
+            <Typography
+              variant="h2"
+              component="h2"
+              gutterBottom
+              sx={{
+                fontSize: {
+                  xs: "2rem",
+                  sm: "2rem",
+                  md: "3rem",
+                  lg: "4rem",
+                  xl: "5rem",
+                },
+                fontWeight: "bold",
+                color: "#6a1b9a",
+              }}>
+              Products
+            </Typography>
+            {/* table  component to display the users */}
+            <TableContainer component={Paper}>
+              <Table sx={{ minWidth: 650 }} aria-label="item table">
+                <TableHead>
+                  <TableRow>
+                    <TableCell>ID</TableCell>
+                    <TableCell align="right">Image</TableCell>
+                    <TableCell>Title</TableCell>
+                    <TableCell align="right">Price</TableCell>
+                    <TableCell align="right">Category</TableCell>
+                  </TableRow>
+                </TableHead>
+                <TableBody>
+                  {filteredItems.map((item) => (
+                    <TableRow key={item.id}>
+                      <TableCell>{item.id}</TableCell>
+                      <TableCell align="right">
+                        <img src={item.image} alt={item.title} width="50" />
+                      </TableCell>
+                      <TableCell component="th" scope="row">
+                        {item.title}
+                      </TableCell>
+                      <TableCell align="right">${item.price}</TableCell>
+                      <TableCell align="right">{item.category}</TableCell>
+                    </TableRow>
+                  ))}
+                </TableBody>
+              </Table>
+            </TableContainer>
+          </Paper>
+        </Box>
+      </Container>
+    </>
   );
-}
+};
+
+export default Products;

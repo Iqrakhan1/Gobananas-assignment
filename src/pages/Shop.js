@@ -33,7 +33,7 @@ export default function Shop() {
   return (
     <>
       {/* Container to center the content and provide some margin at the top */}
-      <Container sx={{ margin: "70px auto" }} my={12}>
+      <Container sx={{ margin: "70px auto" }} mt={12}>
         {/* Box to allow horizontal scrolling if needed */}
         <Box sx={{ overflowX: "auto" }}>
           {/* Paper component to give the list a nice background and padding */}
@@ -45,7 +45,7 @@ export default function Shop() {
               gutterBottom
               sx={{
                 fontSize: {
-                  xs: "1rem",
+                  xs: "2rem",
                   sm: "2rem",
                   md: "3rem",
                   lg: "4rem",
